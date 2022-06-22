@@ -1,0 +1,5 @@
+ruamel.yaml==0.17.21
+GitPython
+PyInquirer==1.0.3
+prompt_toolkit==1.0.14
+rich==12.4.4
