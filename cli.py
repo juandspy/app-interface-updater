@@ -50,6 +50,15 @@ def run_and_fail_if_exit_code(args, cwd):
         raise Exception( f'Invalid exit code: { p.returncode }' )
 
 if __name__ == "__main__":
+    app_interface_repo=init_repo(f"{REPOSITORIES_FOLDER}/app-interface")
+    pprint(
+        f":arrow_double_down: Updating local repo [bold cyan]app-interface[/bold cyan] with [bold cyan]master[/bold cyan] branch",
+    )
+    app_interface_repo.git.checkout('master')
+    app_interface_repo.remotes.origin.pull(
+        refspec="master",
+    )
+
     pprint(":book: Reading", PATH_TO_DEPLOY_YML)
     y = read_yaml(PATH_TO_DEPLOY_YML)
 
